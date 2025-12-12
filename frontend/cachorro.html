@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cachorros | Click Patas</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">Click Patas</a>
+      <nav class="nav-links">
+        <a href="pessoa.html">Pessoas</a>
+        <a class="active" href="cachorro.html">Cachorros</a>
+        <a href="cliente.html">Clientes</a>
+        <a href="doador.html">Doadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="section-title">
+      <h2>Cadastro de Cachorros</h2>
+      <p class="help-text">Informe o ID de um doador válido para criar ou atualizar um cachorro.</p>
+    </div>
+
+    <section class="panels">
+      <article class="panel">
+        <h3>Novo cachorro</h3>
+        <form id="create-form" class="form-grid">
+          <div>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" required />
+          </div>
+          <div>
+            <label for="raca">Raça</label>
+            <input id="raca" name="raca" />
+          </div>
+          <div>
+            <label for="status">Status de adoção</label>
+            <select id="status" name="status" required>
+              <option value="Disponível">Disponível</option>
+              <option value="Adotado">Adotado</option>
+            </select>
+          </div>
+          <div>
+            <label for="doadorId">ID do doador</label>
+            <input id="doadorId" name="doadorId" type="number" required />
+          </div>
+          <button type="submit">Registrar cachorro</button>
+        </form>
+        <div id="create-status" class="status"></div>
+      </article>
+
+      <article class="panel">
+        <h3>Atualizar cachorro</h3>
+        <form id="update-form" class="form-grid">
+          <div>
+            <label for="update-id">ID</label>
+            <input id="update-id" name="id" type="number" required />
+          </div>
+          <div>
+            <label for="update-nome">Nome</label>
+            <input id="update-nome" name="nome" required />
+          </div>
+          <div>
+            <label for="update-raca">Raça</label>
+            <input id="update-raca" name="raca" />
+          </div>
+          <div>
+            <label for="update-status">Status de adoção</label>
+            <select id="update-status" name="status" required>
+              <option value="Disponível">Disponível</option>
+              <option value="Adotado">Adotado</option>
+            </select>
+          </div>
+          <div>
+            <label for="update-doadorId">ID do doador</label>
+            <input id="update-doadorId" name="doadorId" type="number" required />
+          </div>
+          <button type="submit">Salvar alterações</button>
+        </form>
+        <div id="update-status-message" class="status"></div>
+
+        <h3>Remover</h3>
+        <form id="delete-form" class="form-grid">
+          <div>
+            <label for="delete-id">ID</label>
+            <input id="delete-id" name="id" type="number" required />
+          </div>
+          <button type="submit">Excluir cachorro</button>
+        </form>
+        <div id="delete-status" class="status"></div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Cachorros cadastrados</h2>
+      <button id="refresh">Recarregar lista</button>
+    </section>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Raça</th>
+            <th>Status</th>
+            <th>ID do doador</th>
+          </tr>
+        </thead>
+        <tbody id="cachorros-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>CRUD completo de cachorros usando a API em /api/cachorros.</footer>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/cachorro.js"></script>
+</body>
+</html>

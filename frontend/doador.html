@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doadores | Click Patas</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">Click Patas</a>
+      <nav class="nav-links">
+        <a href="pessoa.html">Pessoas</a>
+        <a href="cachorro.html">Cachorros</a>
+        <a href="cliente.html">Clientes</a>
+        <a class="active" href="doador.html">Doadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="section-title">
+      <h2>Cadastro de Doadores</h2>
+      <p class="help-text">Crie doadores a partir do ID de uma pessoa existente.</p>
+    </div>
+
+    <section class="panels">
+      <article class="panel">
+        <h3>Novo doador</h3>
+        <form id="create-form" class="form-grid">
+          <div>
+            <label for="pessoaId">ID da pessoa</label>
+            <input id="pessoaId" name="pessoaId" type="number" required />
+          </div>
+          <div>
+            <label for="cpfCnpj">CPF/CNPJ</label>
+            <input id="cpfCnpj" name="cpfCnpj" required />
+          </div>
+          <div>
+            <label for="totalDoado">Total doado</label>
+            <input id="totalDoado" name="totalDoado" type="number" step="0.01" min="0" />
+          </div>
+          <button type="submit">Criar doador</button>
+        </form>
+        <div id="create-status" class="status"></div>
+      </article>
+
+      <article class="panel">
+        <h3>Atualizar doador</h3>
+        <form id="update-form" class="form-grid">
+          <div>
+            <label for="update-id">ID do doador (pessoa)</label>
+            <input id="update-id" name="id" type="number" required />
+          </div>
+          <div>
+            <label for="update-pessoaId">Novo ID de pessoa (opcional)</label>
+            <input id="update-pessoaId" name="pessoaId" type="number" />
+          </div>
+          <div>
+            <label for="update-cpfCnpj">CPF/CNPJ</label>
+            <input id="update-cpfCnpj" name="cpfCnpj" required />
+          </div>
+          <div>
+            <label for="update-totalDoado">Total doado</label>
+            <input id="update-totalDoado" name="totalDoado" type="number" step="0.01" min="0" />
+          </div>
+          <button type="submit">Salvar alterações</button>
+        </form>
+        <div id="update-status" class="status"></div>
+
+        <h3>Remover</h3>
+        <form id="delete-form" class="form-grid">
+          <div>
+            <label for="delete-id">ID</label>
+            <input id="delete-id" name="id" type="number" required />
+          </div>
+          <button type="submit">Excluir doador</button>
+        </form>
+        <div id="delete-status" class="status"></div>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <h2>Doadores cadastrados</h2>
+      <button id="refresh">Recarregar lista</button>
+    </section>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID (pessoa)</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF/CNPJ</th>
+            <th>Total doado</th>
+          </tr>
+        </thead>
+        <tbody id="doadores-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>CRUD completo de doadores usando a API em /api/doadores.</footer>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/doador.js"></script>
+</body>
+</html>

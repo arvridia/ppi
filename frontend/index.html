@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Click Patas | Integração com API</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">Click Patas</a>
+      <nav class="nav-links">
+        <a href="pessoa.html">Pessoas</a>
+        <a href="cachorro.html">Cachorros</a>
+        <a href="cliente.html">Clientes</a>
+        <a href="doador.html">Doadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Integração front-end com a API</h1>
+      <p>
+        Esta interface consome o backend em Spring Boot para criar, listar, atualizar e remover
+        registros de pessoas, cachorros, clientes e doadores na base MySQL.
+        Escolha uma entidade no menu para começar a testar o CRUD.
+      </p>
+    </section>
+
+    <section class="section-title">
+      <h2>Escolha uma área</h2>
+      <p class="help-text">Cada página exibe formulários dedicados para cada tabela.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Pessoas</h3>
+        <p>Gerencie dados básicos de identificação, contato e endereço.</p>
+        <a href="pessoa.html">Ir para Pessoas</a>
+      </article>
+      <article class="card">
+        <h3>Cachorros</h3>
+        <p>Controle informações de cães e vincule cada animal a um doador existente.</p>
+        <a href="cachorro.html">Ir para Cachorros</a>
+      </article>
+      <article class="card">
+        <h3>Clientes</h3>
+        <p>Cadastre clientes usando o ID de uma pessoa já registrada e a data de cadastro.</p>
+        <a href="cliente.html">Ir para Clientes</a>
+      </article>
+      <article class="card">
+        <h3>Doadores</h3>
+        <p>Associe doadores a pessoas, informe CPF/CNPJ e acompanhe o total doado.</p>
+        <a href="doador.html">Ir para Doadores</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Interface simples para testar o CRUD das quatro tabelas expostas pela API Spring Boot.
+  </footer>
+</body>
+</html>

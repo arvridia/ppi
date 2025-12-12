@@ -1,0 +1,20 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: clickpatas-mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: click_patas
+      MYSQL_USER: admin             
+      MYSQL_PASSWORD: root
+    
+    ports:
+      - "3306:3306"
+      
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
